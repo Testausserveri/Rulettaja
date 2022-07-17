@@ -1,0 +1,14 @@
+command /venalainenruletti:
+	aliases: /ruletti
+	permission: churchstate.venalainenruletti
+	permission message: Sinulla ei ole oikeutta suorittaa tata komentoa!
+	executable by: players
+	trigger:
+    	set {_mahdollisuus} to a random integer between 1 and 100
+
+		if {_mahdollisuus} is between 1 and 20:
+    		broadcast "&cPelaaja %name of player% hävisi ruletin ja kuoli! Huh!"
+    		make console execute command "kill %name of player%"
+		if {_mahdollisuus} is between 21 and 100:
+    		send "Voitit ruletin etkä kuollut! Wuhuu!"
+    		give a cake to player
